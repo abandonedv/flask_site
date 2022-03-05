@@ -1,7 +1,7 @@
 import sqlite3 as sq
 from time import time
 
-from asgiref.wsgi import WsgiToAsgi
+# from asgiref.wsgi import WsgiToAsgi
 from flask import Flask, \
     render_template, \
     request, flash, \

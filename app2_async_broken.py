@@ -10,7 +10,7 @@ import sqlite3 as sq
 from time import time
 
 import aiohttp
-from asgiref.wsgi import WsgiToAsgi
+# from asgiref.wsgi import WsgiToAsgi
 
 from flask_login import LoginManager, \
     login_user, \
