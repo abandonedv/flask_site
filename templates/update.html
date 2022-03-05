@@ -1,0 +1,46 @@
+<link rel="stylesheet" type="text/css" href="../static/css/home.css">
+
+{% extends 'base.html' %}
+
+{% block title_name %}{{ title }}{% endblock %}
+
+{% block content %}
+{% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}"> {{msg}} </div>
+{% endfor %}
+<form action="{{ url_for('update', alias=post.url) }}" method="post" enctype="multipart/form-data" style="padding: 50px">
+    <p>
+        <div style="display: inline-block; min-width: 150px;">Фотография: </div>
+    <br>...
+        <input type="file" name="file" style="font-size: smaller">
+    </p>
+    <br>
+    <p>
+        <div style="display: inline-block; min-width: 150px">Название статьи: </div>
+        <input type="text" name="name" value="{{ post.name }}" style="width: 700px">
+    </p>
+    <br>
+    <p>
+        <div style="display: inline-block; min-width: 150px">URL статьи: </div>
+        <input type="text" name="url" value="{{ post.url }}" style="width: 700px">
+    </p>
+    <br>
+    <p>
+        <div style="display: inline-block; min-width: 150px">Ссылка на wiki: </div>
+        <input type="text" name="wiki" value="{{ post.wiki }}" style="width: 700px">
+    </p>
+    <br>
+    <p><label>Краткая биография: </label>
+    <p><textarea name="post" rows="10" style="width: 900px; resize: none; padding: 5px">{{ post.bio }}</textarea></p>
+    <br>
+    <p><label>Первая колонка: </label>
+    <p><textarea name="col1" rows="10" style="width: 900px; resize: none; padding: 5px">{{ post.col1 }}</textarea></p>
+    <br>
+    <p><label>Вторая колонка: </label>
+    <p><textarea name="col2" rows="10" style="width: 900px; resize: none; padding: 5px">{{ post.col2 }}</textarea></p>
+    <br>
+    <p><label>Третья колонка: </label>
+    <p><textarea name="col3" rows="10" style="width: 900px; resize: none; padding: 5px">{{ post.col3 }}</textarea></p>
+    <p><input type="submit" value="Обновить"></p>
+</form>
+{% endblock %}

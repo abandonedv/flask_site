@@ -1,0 +1,29 @@
+{% extends "base_block.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block title_form %}{{ title }}{% endblock %}
+
+{% block form %}
+<form action="" method="post">
+    <ul class="reg_list">
+        <li>
+            <div class="reg_title_log">Email: </div>
+            <input class="reg_input_log" type="text" name="email" value="" required>
+        </li>
+        <li>
+            <div class="reg_title_log">Пароль: </div>
+            <input class="reg_input_log" type="text" name="psw" value="" required>
+        </li>
+    </ul>
+    <br>
+    <div style="overflow: hidden">
+        <div style="float: left; background: rgba(255, 255, 255, 1)">
+            <input type="submit" value="Войти">
+        </div>
+
+        <div style="float: right;">
+            <a href="{{ url_for('register') }} " style="color: black">Регистрация</a>
+        </div>
+    </div>
+</form>
+{% endblock %}

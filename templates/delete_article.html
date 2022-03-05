@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title_name %}{{ title }}{% endblock %}
+
+{% block content %}
+{% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}"> {{msg}} </div>
+{% endfor %}
+
+<form action="{{ url_for('delete') }}" method="post" style="padding: 10px">
+    <h2 class="titl">Удаление статьи</h2>
+    <br>
+    <ul class="list-posts">
+        <select class = "reg_select" name="url">
+            {% for p in posts %}
+            <option value="{{ p.url }}">{{ p.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Удалить">
+    </ul>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'author.html' %}
+
+{% block title_name %}{{ post.name }}{% endblock %}
+{% block name %}{{ post.name }}{% endblock %}
+
+{% block portrait %}
+    <img src="{{url_for('get_picture', alias=post.url)}}">
+{% endblock %}
+
+{% block bio %}
+    {{ post.bio }}
+{% endblock %}
+
+{% block wiki %}
+<a href="{{ post.wiki }}">Подробнее</a>
+{% endblock %}
+
+
+{% block col1 %}{{ post.col1 | safe }}{% endblock %}
+{% block col2 %}{{ post.col2 | safe }}{% endblock %}
+{% block col3 %}{{ post.col3 | safe }}{% endblock %}
+
+{% block edit %}
+    <a href="{{url_for('update', alias=post.url)}}" style="padding: 10px">Редактировать</a>
+{% endblock %}

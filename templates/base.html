@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<title>{% block title_name %}{% endblock %} </title>
+	<link rel="stylesheet" type="text/css" href="../static/css/home.css">
+	<link type="image/png" sizes="16x16" rel="icon" href="../static/images/icon.png">
+</head>
+<body>
+<div class="wrapper">
+	<div class="page">
+		<div class="header">
+			<div class="header_text">
+				<a href="/">Великие русские поэты</a>
+			</div>
+			<div class="header_refs">
+				{% for x in authors %}
+					<a href="{{url_for('show_post', alias=x.url)}}">{{x.name}}</a> |
+				{% endfor %}
+			</div>
+		</div>
+        {% block content %}{% endblock %}
+    </div>
+	<div class="footer">
+		<a href="/">Главная</a> |
+		<a href="/create">Создать статью</a> |
+		<a href="/contact">Связаться с нами</a> |
+		<a href="/register">Зарегистрироваться</a> |
+		<a href="/login">Авторизация</a> |
+		<a href="/profile">Профиль</a> |
+		<a href="/showall">Список статей</a> |
+		<a href="/delete">Удалить статью</a>
+	</div>
+</div>

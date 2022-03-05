@@ -1,0 +1,217 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	font-family: Georgia, serif;
+}
+
+html, body
+{
+	height: 100%;
+	background: #fff url('../images/home_backgroung.jfif') 0% local;
+	background-position:center bottom;
+    background-repeat:no-repeat;
+    background-size: cover;
+	background-attachment: fixed;
+
+}
+
+.wrapper
+{
+	height: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.page
+{
+	min-height: 100%;
+	padding-bottom: 90px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.7);
+	border: solid 1px black;
+}
+
+.header
+{
+	max-width: 1100px;
+	height: 300px;
+	border-bottom: solid 1px black;
+}
+
+.header_text
+{
+	padding-top: 60px;
+	padding-left: 100px;
+	width: auto;
+	font-family: Georgia, serif;
+	font-size: 38px;
+}
+
+.header_refs
+{
+	padding-top: 30px;
+	padding-left: 100px;
+	padding-right: 100px;
+	width: auto;
+	font-family: Georgia, serif;
+	font-size: 16px;
+}
+
+a
+{
+	text-decoration: none
+}
+
+a:link
+{
+	color: black;
+}
+
+a:visited
+{
+	color: black;
+}
+
+.footer
+{
+	height: 90px;
+	margin-top: -90px;
+	box-sizing: border-box;
+	border: solid 1px black;
+	padding-top: 30px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+div.poems_inner div
+{
+	background: rgba(255, 255, 255, 0.7);
+  	display: inline-block;
+	padding: 10px;
+	border: solid 1px black;
+	margin: 10px;
+	text-align: left;
+}
+
+.poems_outer
+{
+	text-align: center;
+}
+
+.poems_inner
+{
+	vertical-align: top;
+	display: inline-block;
+	width: 363px;
+}
+
+.picture
+{
+	margin-bottom: 20px;
+	border: solid 1px black;
+	display: inline-block;
+}
+
+.picture img
+{
+	max-width: 300px;
+}
+
+.title
+{
+	margin: 20px 0 20px;
+}
+
+.biography
+{
+	padding: 10px 10px 10px 10px;
+}
+
+.line_block
+{
+	width: 110px;
+	height: 50px;
+	background: #f1f1f1;
+	float: left;
+	margin: 0 15px 15px 0;
+	text-align: center;
+	padding: 10px;
+}
+
+.table
+{
+	margin: 10px;
+}
+
+.profile-ava
+{
+	width: 200px;
+	text-align: center;
+	overflow: hidden;
+	padding: 10px;
+}
+
+.profile-ava img
+{
+	max-width: 150px;
+	height: auto;
+}
+
+.profile-load
+{
+	margin-top: 10px;
+	overflow: hidden;
+	max-width: 200px;
+	padding: 10px;
+}
+
+.profile-load input[type=submit], input[type=file]
+{
+	width: 100%;
+	font-size: 18px;
+}
+
+.profile-load p
+{
+	padding: 0;
+	margin: 5px 0 0 0;
+}
+
+.profile-panel
+{
+	padding: 10px;
+}
+
+ul.profile-info
+{
+	list-style: none;
+	margin: 10px 0 0 0;
+	padding: 0;
+	color: #7E652F;
+}
+
+ul.profile-info li
+{
+	margin-top: 10px;
+}
+
+.flash
+{
+	padding: 10px;
+	margin: 10px;
+}
+
+.flash.success
+{
+	border: 1px solid #21DB56;
+	background: #AEFFC5;
+}
+
+.flash.error
+{
+	border: 1px solid #FF4343;
+	background: #FF9C9C;
+}
+
+

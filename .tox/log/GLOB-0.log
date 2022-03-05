@@ -1,0 +1,6 @@
+action: GLOB, msg: packaging
+cwd: C:\Users\Vadim\PycharmProjects\MyFirstSite
+cmd: 'C:\Users\Vadim\AppData\Local\Programs\Python\Python310\python.exe' setup.py sdist --formats=zip --dist-dir 'C:\Users\Vadim\PycharmProjects\MyFirstSite\.tox\dist'
+running sdist
+running egg_info
+error: error in 'egg_base' option: 'src' does not exist or is not a directory

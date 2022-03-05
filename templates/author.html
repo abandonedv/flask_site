@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}"> {{msg}} </div>
+    {% endfor %}
+	<div style="text-align: center">
+		<h1 class="title">{% block name %}{% endblock %}</h1>
+		<div class="picture">
+            {% block portrait %}
+            {% endblock %}
+		</div>
+	</div>
+
+	<div class="biography">
+		<h3 style="margin-bottom: 20px">Краткая биография</h3>
+		<p>{% block bio %}{% endblock %}</p>
+		<br>
+		<p> {% block wiki %}{% endblock %} </p>
+	</div>
+
+	<hr>
+	<div class="poems_outer">
+			{% block col1 %}{% endblock %}
+			{% block col2 %}{% endblock %}
+			{% block col3 %}{% endblock %}
+	</div>
+
+    <div class="poems_inner">
+        {% block edit %}{% endblock %}
+    </div>
+</div>
+{% endblock %}

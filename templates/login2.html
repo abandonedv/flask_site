@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title_name %}{{ title }}{% endblock %}
+
+{% block content %}
+{% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}"> {{msg}} </div>
+{% endfor %}
+
+<form action="" method="post" style="padding: 50px">
+    {{ form.hidden_tag() }}
+    <p>{{ form.email.label() }} {{ form.email() }}</p>
+    <p>{{ form.psw.label() }} {{ form.psw() }}</p>
+    <p>{{ form.remember.label() }} {{ form.remember() }}</p>
+    <p>{{ form.submit() }}</p>
+    <br>
+    <p><a href="{{ url_for('register') }}" style="color: black">Регистрация</a></p>
+</form>
+{% endblock %}

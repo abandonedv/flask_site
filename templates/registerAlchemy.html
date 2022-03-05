@@ -1,0 +1,57 @@
+{% extends "base_block.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block title_form %}{{ title }}{% endblock %}
+
+{% block form %}
+<form action="{{ url_for('registerAlchemy') }}" method="post">
+    <ul class="reg_list">
+        <li>
+            <div class="reg_title_reg">Имя: </div>
+            <label>
+                <input class="reg_input" type="text" name="name" value="" required>
+            </label>
+        </li>
+		<li>
+            <div class="reg_title_reg">Возраст: </div>
+            <label>
+                <input class="reg_input" type="text" name="old" value="" required>
+            </label>
+        </li>
+		<li>
+            <div class="reg_title_reg">Город: </div>
+            <label>
+                <input class="reg_input" type="text" name="city" value="" required>
+            </label>
+        </li>
+        <li>
+            <div class="reg_title_reg">Email: </div>
+            <label>
+                <input class="reg_input" type="text" name="email" value="" required>
+            </label>
+        </li>
+        <li>
+            <div class="reg_title_reg">Пароль: </div>
+            <label>
+                <input class="reg_input" type="password" name="psw" value="" required>
+            </label>
+        </li>
+        <li>
+            <div class="reg_title_reg">Повтор пароля: </div>
+            <label>
+                <input class="reg_input" type="password" name="psw2" value="" required>
+            </label>
+        </li>
+    </ul>
+    <br>
+    <div style="overflow: hidden">
+        <div style="float: left; background: rgba(255, 255, 255, 1)">
+            <input type="submit" value="Зарегистрироваться">
+        </div>
+
+        <div style="float: right;">
+            <input type="reset" value="Очистить форму">
+        </div>
+    </div>
+</form>
+{% endblock %}

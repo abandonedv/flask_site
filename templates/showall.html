@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="../static/css/show.css">
+
+{% extends 'base.html' %}
+
+{% block title_name %}{{ title }}{% endblock %}
+
+{% block content %}
+<h2 class="titl">Список статей</h2>
+<ul class="list-posts">
+   {% for p in posts %}
+    <li>
+        <p class="title"><a href="{{url_for('show_post', alias=p.url)}}">{{p.name}}</a></p>
+        <p class="annonce">{{ p.bio[:500] | striptags }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
