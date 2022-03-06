@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/register.css">
+</head>
+<body>
+	<div class="reg_form">
+		<h1 style="color: black">{% block title_form %}{% endblock %}</h1>
+		{% for cat, msg in get_flashed_messages(True) %}
+			<div class="flash {{ cat }}"> {{msg}} </div>
+		{% endfor %}
+		<br>
+        {% block form %}
+        {% endblock %}
+	</div>
+</body>
+</html>
