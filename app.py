@@ -245,6 +245,7 @@ def contact():
             flash("Сообщение отправлено", category='success')
             t = time()
             bot.send_message(current_user.getEmail() + "\n\n" + request.form["message"])
+            dbase.add_message(current_user.getEmail(), request.form["message"])
             ft = time() - t
             bot.send_message(str(ft))
         else:

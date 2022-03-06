@@ -1,6 +1,7 @@
 import math
 import sqlite3 as sq
 import time
+import datetime
 
 
 class DataBase:
@@ -32,9 +33,9 @@ class DataBase:
 
     async def add_message_a(self, mail, message):
         try:
-            tm = math.floor(time.time())
+            t = str(datetime.datetime.now())
             self.__cur.execute("INSERT INTO messages VALUES (?, ?, ?)",
-                               (mail, message, tm))
+                               (mail, message, t))
             self.__db.commit()
         except sq.Error as e:
             print("Ошибка добавления статьи в БД " + str(e))
@@ -44,9 +45,9 @@ class DataBase:
 
     def add_message(self, mail, message):
         try:
-            tm = math.floor(time.time())
+            t = str(datetime.datetime.now())
             self.__cur.execute("INSERT INTO messages VALUES (?, ?, ?)",
-                               (mail, message, tm))
+                               (mail, message, t))
             self.__db.commit()
         except sq.Error as e:
             print("Ошибка добавления статьи в БД " + str(e))

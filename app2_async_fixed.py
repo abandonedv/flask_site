@@ -45,12 +45,11 @@ async def contact():
     if request.method == "POST":
         form = await request.form
         t = time()
-        for x in range(20):
-            await send_message(form["message"])
-            await dbase.add_message_a('current_user.getEmail()', form["message"])
+        await send_message(form["message"])
+        await dbase.add_message_a('VIIlinykh@mai.ru', form["message"])
         await send_message(time() - t)
 
-    return await render_template('contact.html',
+    return await render_template('contact_for_app2.html',
                                  title="Обратная связь")
 
 
