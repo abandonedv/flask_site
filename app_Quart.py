@@ -24,8 +24,6 @@ from my_user_login import UserLogin
 from bot_async import send_message
 import sqlite3 as sq
 
-from forms import FlaskForm
-
 from DataBase import DataBase
 
 # from forms import LoginForm
@@ -40,13 +38,14 @@ conn.row_factory = sq.Row
 dbase = DataBase(conn)
 
 
-@app.route("/contact", methods=["POST", "GET"])
+@app.route("/", methods=["POST", "GET"])
 async def contact():
     if request.method == "POST":
         form = await request.form
-        t = time()
         await send_message(form["message"])
-        await dbase.add_message_a('VIIlinykh@mai.ru', form["message"])
+        t = time()
+        for x in range(20):
+            await dbase.add_message_a("Quart", form["message"])
         await send_message(time() - t)
 
     return await render_template('contact_for_app2.html',

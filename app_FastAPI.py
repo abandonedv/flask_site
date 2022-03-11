@@ -22,9 +22,10 @@ dbase = DataBase(conn)
 
 @app.post("/")
 async def contact(message: str = Form(...)):
-    t = time()
     await send_message(message)
-    await dbase.add_message_a("current_user.getEmail()", message)
+    t = time()
+    for x in range(20):
+        await dbase.add_message_a("FastAPI", message)
     await send_message(time() - t)
 
 
