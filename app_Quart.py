@@ -54,5 +54,4 @@ async def contact():
 
 
 if __name__ == "__main__":
-    # asyncio.run(serve(asgi_app, Config()))
     app.run(host="127.0.0.3", debug=True)
